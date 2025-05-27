@@ -45,6 +45,8 @@ const HeroCarousel = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  const CurrentIcon = slides[currentSlide].icon;
+
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
       {/* Background Pattern */}
@@ -60,7 +62,7 @@ const HeroCarousel = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-6">
               <div className={`inline-flex items-center space-x-3 px-4 py-2 rounded-full bg-gradient-to-r ${slides[currentSlide].gradient} text-white shadow-lg`}>
-                <slides[currentSlide].icon className="h-5 w-5" />
+                <CurrentIcon className="h-5 w-5" />
                 <span className="text-sm font-medium">{slides[currentSlide].subtitle}</span>
               </div>
               
@@ -104,7 +106,7 @@ const HeroCarousel = () => {
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${slides[currentSlide].gradient} flex items-center justify-center`}>
-                    <slides[currentSlide].icon className="h-6 w-6 text-white" />
+                    <CurrentIcon className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Property Registration</h3>
